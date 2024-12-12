@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Mon Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#profile">Profil</a></li>
+                    <li><a href="#journey">Parcours</a></li>
+                    <li><a href="#internships">Stages</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#bts">BTS SIO</a></li>
+                    <li><a href="#exams">Épreuves</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-info">
+            <div id="date"></div>
+            <div id="clock"></div>
+        </div>      
+    </header>
+
+    <aside class="sidebar">
+        <div class="name">Yann Olivreau</div>
+        <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#profile">Profil</a></li>
+            <li><a href="#journey">Parcours</a></li>
+            <li><a href="#internships">Stages</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#bts">BTS SIO</a></li>
+            <li><a href="#exams">Épreuves</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="contact-icons">
+            <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=olivreauy@gmail.com" class="icon"><img src="gmail.png" alt="Gmail"></a>
+            <a href="https://www.linkedin.com/in/example" class="icon"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/example" class="icon"><img src="github.png" alt="GitHub"></a>
+        </div>
+    </aside>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>À propos de moi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section id="profile">
+            <div class="container">
+                <h2>Profil</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa id neque aliquam vestibulum. Amet risus nullam eget felis eget nunc lobortis. Non diam phasellus vestibulum lorem sed risus ultricies tristique nulla.</p>
+            </div>
+        </section>
+
+        <section id="journey">
+            <div class="container">
+                <h2>Parcours</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section id="internships">
+            <div class="container">
+                <h2>Stages</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa id neque aliquam vestibulum. Amet risus nullam eget felis eget nunc lobortis.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Compétences</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projets</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa id neque aliquam vestibulum. Amet risus nullam eget felis eget nunc lobortis.</p>
+            </div>
+        </section>
+
+        <section id="bts">
+            <div class="container">
+                <h2>BTS SIO</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </section>
+
+        <section id="exams">
+            <div class="container">
+                <h2>Épreuves</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor massa id neque aliquam vestibulum. Amet risus nullam eget felis eget nunc lobortis.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contactez-moi</h2>
+                <form action="process.php" method="POST">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+
+            // Afficher la date
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            document.getElementById('date').textContent = `${day}/${month}/${year}`;
+        }
+
+        setInterval(updateClock, 1000); // Mise à jour toutes les secondes
+        updateClock(); // Appel initial pour afficher l'heure et la date immédiatement
+    </script>        
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
