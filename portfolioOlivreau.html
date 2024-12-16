@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="portfolio.css">
-
 </head>
 <body>
     <header>
@@ -16,6 +15,12 @@
             <div id="date"></div>
         </div>      
     </header>
+
+    <!-- Image en fond avec mon nom centré -->
+    <div class="background-image">
+        <img src="techno.jpg" alt="Background Image">
+        <div class="centered-text">Yann Olivreau</div>
+    </div>
 
     <button class="toggle-btn" id="toggleSidebar">☰</button>
 
@@ -116,6 +121,7 @@
     </main>
 
     <script>
+        
         function updateDate() {
             const now = new Date();
             const day = String(now.getDate()).padStart(2, '0');
@@ -135,6 +141,7 @@
             sidebar.classList.toggle('open');
             mainContent.classList.toggle('shifted');
         });
+        
     </script>        
 
     <footer>
