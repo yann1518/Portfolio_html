@@ -10,27 +10,15 @@
     <header>
         <div class="header-title">
             <h1>Mon Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#profile">Profil</a></li>
-                    <li><a href="#journey">Parcours</a></li>
-                    <li><a href="#internships">Stages</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#projects">Projets</a></li>
-                    <li><a href="#bts">BTS SIO</a></li>
-                    <li><a href="#exams">Épreuves</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
         </div>
         <div class="header-info">
             <div id="date"></div>
-            <div id="clock"></div>
         </div>      
     </header>
 
-    <aside class="sidebar">
+    <button class="toggle-btn" id="toggleSidebar">☰</button>
+
+    <aside class="sidebar" id="sidebar">
         <div class="name">Yann Olivreau</div>
         <ul>
             <li><a href="#about">À propos</a></li>
@@ -50,7 +38,7 @@
         </div>
     </aside>
 
-    <main>
+    <main id="mainContent">
         <section id="about">
             <div class="container">
                 <h2>À propos de moi</h2>
@@ -127,22 +115,25 @@
     </main>
 
     <script>
-        function updateClock() {
+        function updateDate() {
             const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-
-            // Afficher la date
             const day = String(now.getDate()).padStart(2, '0');
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const year = now.getFullYear();
             document.getElementById('date').textContent = `${day}/${month}/${year}`;
         }
 
-        setInterval(updateClock, 1000); // Mise à jour toutes les secondes
-        updateClock(); // Appel initial pour afficher l'heure et la date immédiatement
+        updateDate(); // Appel initial pour afficher la date immédiatement
+
+        // Gestion de la sidebar
+        const toggleBtn = document.getElementById('toggleSidebar');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            mainContent.classList.toggle('shifted');
+        });
     </script>        
 
     <footer>
